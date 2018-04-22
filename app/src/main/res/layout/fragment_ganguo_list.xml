@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/blue"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="分类专区"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/rtl_nsxf"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:background="@drawable/litter_round_white_stro_bg"
+                android:layout_height="70dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="女士鞋服专区"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/lights_black"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rtl_nsxf"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:background="@drawable/litter_round_white_stro_bg"
+                android:layout_height="70dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="男士鞋服专区"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/lights_black"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rtl_hzp"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:background="@drawable/litter_round_white_stro_bg"
+                android:layout_height="70dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="化妆品专区"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/lights_black"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rtl_dzcp"
+                android:layout_width="match_parent"
+                android:background="@drawable/litter_round_white_stro_bg"
+                android:layout_margin="5dp"
+                android:layout_height="70dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="电子产品专区"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/lights_black"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rtl_others"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:background="@drawable/litter_round_white_stro_bg"
+                android:layout_height="70dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="超市"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/lights_black"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

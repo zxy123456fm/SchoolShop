@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/blue"
+        android:layout_height="50dp">
+        <RelativeLayout
+            android:id="@+id/rtl_back"
+            android:layout_width="60dp"
+            android:visibility="gone"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:background="@mipmap/back"
+                android:layout_centerInParent="true"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="用户登录"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_regist"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/white"
+            android:text="注册"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/litter_round_white_bg"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="wrap_content">
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/gray"
+            android:layout_height="0.2dp"></View>
+        <EditText
+            android:id="@+id/et_user"
+            android:hint="请输入用户名"
+            android:textColor="@color/light_black"
+            android:layout_width="match_parent"
+            android:background="@null"
+            android:layout_marginLeft="15dp"
+            android:textSize="13sp"
+            android:textColorHint="@color/dark_gray"
+            android:layout_height="50dp" />
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/gray"
+            android:layout_height="0.2dp"></View>
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:inputType="textPassword"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/light_black"
+            android:layout_marginLeft="15dp"
+            android:textSize="13sp"
+            android:background="@null"
+            android:textColorHint="@color/dark_gray"
+            android:hint="请输入密码"
+            android:layout_height="50dp" />
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/gray"
+            android:layout_height="0.2dp"></View>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+        <CheckBox
+            android:id="@+id/cb_manager"
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:text="管理员"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content" />
+        <CheckBox
+            android:id="@+id/cb_shop"
+            android:layout_width="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/cb_manager"
+            android:text="商家"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rtl_comfirm"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/litter_round_blue_bg"
+        android:layout_height="40dp">
+        <TextView
+            android:text="确认登录"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="90dp"
+            android:background="@mipmap/ic_launcher"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="10dp"
+            android:layout_height="90dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_toRightOf="@+id/img"
+            android:layout_margin="10dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:text="水煮"
+                android:textColor="@color/light_black"
+                android:layout_gravity="center|left"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_detail"
+                android:layout_width="wrap_content"
+                android:text="好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃"
+                android:singleLine="true"
+                android:textColor="@color/light_black"
+                android:layout_gravity="center|left"
+                android:gravity="center"
+                android:textSize="13sp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_address"
+                    android:layout_width="wrap_content"
+                    android:text="福建泉州"
+                    android:textColor="@color/light_black"
+                    android:layout_gravity="center|left"
+                    android:gravity="center|left"
+                    android:textSize="12sp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="wrap_content"
+                    android:text="￥12元"
+                    android:textColor="@color/red"
+                    android:layout_gravity="center|left"
+                    android:gravity="center|right"
+                    android:textSize="12sp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/gray"
+        android:layout_height="0.1dp"></View>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+        <TextView
+            android:id="@+id/tv_delete"
+            android:layout_width="wrap_content"
+            android:text="删除"
+            android:textColor="@color/red"
+            android:textSize="13sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:text="发布时间"
+            android:textColor="@color/light_black"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:textSize="11sp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</LinearLayout>
