@@ -44,12 +44,12 @@ public class GoodManagerActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
-        adapter.setOnDelFoodLitner(new GoodManagerAdapter.onDelFoodLitner() {
+        adapter.setOnDelgoodLitner(new GoodManagerAdapter.onDelgoodLitner() {
             @Override
             public void Del(int pos) {
                 startProgressDialog("加载中...");
-                Product food = new Product();
-                food.delete(mDate.get(pos).getObjectId(), new UpdateListener() {
+                Product good = new Product();
+                good.delete(mDate.get(pos).getObjectId(), new UpdateListener() {
                     @Override
                     public void done(BmobException e) {
                         stopProgressDialog();
@@ -80,11 +80,11 @@ public class GoodManagerActivity extends BaseActivity {
         if(s){
             startProgressDialog("加载中...");
         }
-        BmobQuery<Product> foodBmobQuery = new BmobQuery<>();
+        BmobQuery<Product> goodBmobQuery = new BmobQuery<>();
         if(getIntent().getBooleanExtra("shop",false)){
-            foodBmobQuery.addWhereEqualTo("ShopId", SetUtils.GetId(getApplicationContext()));
+            goodBmobQuery.addWhereEqualTo("ShopId", SetUtils.GetId(getApplicationContext()));
         }
-        foodBmobQuery.findObjects(new FindListener<Product>() {
+        goodBmobQuery.findObjects(new FindListener<Product>() {
             @Override
             public void done(List<Product> list, BmobException e) {
                 stopProgressDialog();

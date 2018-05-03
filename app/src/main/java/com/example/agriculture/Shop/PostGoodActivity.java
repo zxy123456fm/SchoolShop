@@ -68,7 +68,7 @@ public class PostGoodActivity extends BaseActivity {
         list.add("男士鞋服专区");
         list.add("化妆品专区");
         list.add("电子产品专区");
-        list.add("其他专区");
+        list.add("超市专区");
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, list);
         //第三步：为适配器设置下拉列表下拉时的菜单样式。
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -116,18 +116,18 @@ public class PostGoodActivity extends BaseActivity {
      */
     private void Post0Photo() {
         startProgressDialog("发布中...");
-        Product food = new Product();
-        food.setName(mEtName.getText().toString().trim());
-        food.setDetail(mEtDetail.getText().toString().trim());
-        food.setShopId(SetUtils.GetId(getApplicationContext()));
-        food.setType(mType);
+        Product good = new Product();
+        good.setName(mEtName.getText().toString().trim());
+        good.setDetail(mEtDetail.getText().toString().trim());
+        good.setShopId(SetUtils.GetId(getApplicationContext()));
+        good.setType(mType);
         if(mCbShow.isChecked()){
-            food.setHomeShow(true);
+            good.setHomeShow(true);
         }else {
-            food.setHomeShow(false);
+            good.setHomeShow(false);
         }
-        food.setPrice(mEtPrice.getText().toString().trim());
-        food.save(new SaveListener<String>() {
+        good.setPrice(mEtPrice.getText().toString().trim());
+        good.save(new SaveListener<String>() {
             @Override
             public void done(String s, BmobException e) {
                 stopProgressDialog();
@@ -151,19 +151,19 @@ public class PostGoodActivity extends BaseActivity {
                 stopProgressDialog();
                 if(e==null){
                     startProgressDialog("发布中...");
-                    Product food = new Product();
-                    food.setName(mEtName.getText().toString().trim());
-                    food.setDetail(mEtDetail.getText().toString().trim());
-                    food.setShopId(SetUtils.GetId(getApplicationContext()));
+                    Product good = new Product();
+                    good.setName(mEtName.getText().toString().trim());
+                    good.setDetail(mEtDetail.getText().toString().trim());
+                    good.setShopId(SetUtils.GetId(getApplicationContext()));
                     if(mCbShow.isChecked()){
-                        food.setHomeShow(true);
+                        good.setHomeShow(true);
                     }else {
-                        food.setHomeShow(false);
+                        good.setHomeShow(false);
                     }
-                    food.setType(mType);
-                    food.setImgUrl1(bmobFile.getFileUrl());
-                    food.setPrice(mEtPrice.getText().toString().trim());
-                    food.save(new SaveListener<String>() {
+                    good.setType(mType);
+                    good.setImgUrl1(bmobFile.getFileUrl());
+                    good.setPrice(mEtPrice.getText().toString().trim());
+                    good.save(new SaveListener<String>() {
                         @Override
                         public void done(String s, BmobException e) {
                             stopProgressDialog();
@@ -199,20 +199,20 @@ public class PostGoodActivity extends BaseActivity {
                             if(e==null){
                                 final String Img2 = bmobFile.getFileUrl();  //第2张
                                 startProgressDialog("发布中...");
-                                Product food = new Product();
-                                food.setName(mEtName.getText().toString().trim());
+                                Product good = new Product();
+                                good.setName(mEtName.getText().toString().trim());
                                 if(mCbShow.isChecked()){
-                                    food.setHomeShow(true);
+                                    good.setHomeShow(true);
                                 }else {
-                                    food.setHomeShow(false);
+                                    good.setHomeShow(false);
                                 }
-                                food.setDetail(mEtDetail.getText().toString().trim());
-                                food.setType(mType);
-                                food.setImgUrl1(Img1);
-                                food.setShopId(SetUtils.GetId(getApplicationContext()));
-                                food.setImgUrl2(Img2);
-                                food.setPrice(mEtPrice.getText().toString().trim());
-                                food.save(new SaveListener<String>() {
+                                good.setDetail(mEtDetail.getText().toString().trim());
+                                good.setType(mType);
+                                good.setImgUrl1(Img1);
+                                good.setShopId(SetUtils.GetId(getApplicationContext()));
+                                good.setImgUrl2(Img2);
+                                good.setPrice(mEtPrice.getText().toString().trim());
+                                good.save(new SaveListener<String>() {
                                     @Override
                                     public void done(String s, BmobException e) {
                                         stopProgressDialog();
@@ -260,21 +260,21 @@ public class PostGoodActivity extends BaseActivity {
                                         if(e==null){
                                             final String Img3 = bmobFile.getFileUrl();  //第2张
                                             startProgressDialog("发布中...");
-                                            Product food = new Product();
+                                            Product good = new Product();
                                             if(mCbShow.isChecked()){
-                                                food.setHomeShow(true);
+                                                good.setHomeShow(true);
                                             }else {
-                                                food.setHomeShow(false);
+                                                good.setHomeShow(false);
                                             }
-                                            food.setName(mEtName.getText().toString().trim());
-                                            food.setDetail(mEtDetail.getText().toString().trim());
-                                            food.setType(mType);
-                                            food.setImgUrl1(Img1);
-                                            food.setShopId(SetUtils.GetId(getApplicationContext()));
-                                            food.setImgUrl2(Img2);
-                                            food.setImgUrl3(Img3);
-                                            food.setPrice(mEtPrice.getText().toString().trim());
-                                            food.save(new SaveListener<String>() {
+                                            good.setName(mEtName.getText().toString().trim());
+                                            good.setDetail(mEtDetail.getText().toString().trim());
+                                            good.setType(mType);
+                                            good.setImgUrl1(Img1);
+                                            good.setShopId(SetUtils.GetId(getApplicationContext()));
+                                            good.setImgUrl2(Img2);
+                                            good.setImgUrl3(Img3);
+                                            good.setPrice(mEtPrice.getText().toString().trim());
+                                            good.save(new SaveListener<String>() {
                                                 @Override
                                                 public void done(String s, BmobException e) {
                                                     stopProgressDialog();

@@ -52,9 +52,9 @@ public class ShopCarOrderAdapter extends BaseAdapter {
 		}else {
 			viewHold= (ViewHold) convertView.getTag();
 		}
-			viewHold.TvTitle.setText(""+mDate.get(position).getFoodName());
+			viewHold.TvTitle.setText(""+mDate.get(position).getgoodName());
 			viewHold.TvNum.setText("x"+mDate.get(position).getGoodNum());
-			viewHold.TvPrice.setText("订单价格:"+"￥"+mDate.get(position).getFoodTPrice());
+			viewHold.TvPrice.setText("订单价格:"+"￥"+mDate.get(position).getgoodTPrice());
 			UILUtils.displayImageNoAnim(mDate.get(position).getImg1(),viewHold.Img);
 		return convertView;
 	}

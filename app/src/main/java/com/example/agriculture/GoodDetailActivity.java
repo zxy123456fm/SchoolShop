@@ -33,7 +33,7 @@ public class GoodDetailActivity extends BaseActivity {
     private TextView mTvDetail;
     private RelativeLayout mRtlBuy;
     private TextView mTvPrice;
-    private Product mFood;
+    private Product mgood;
     private TextView mTvAddress;
     private TextView mTvCollect;
     private TextView mTvCollect1;
@@ -56,8 +56,8 @@ public class GoodDetailActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),PraiseListActivity.class)
-                .putExtra("id",mFood.getShopId())
-                .putExtra("name",mFood.getName()));
+                .putExtra("id",mgood.getShopId())
+                .putExtra("name",mgood.getName()));
             }
         });
     }
@@ -70,23 +70,23 @@ public class GoodDetailActivity extends BaseActivity {
 
 
         if(getIntent().getSerializableExtra("date")!=null){
-            mFood= (Product) getIntent().getSerializableExtra("date");
-            mTvDetail.setText(mFood.getDetail());
-            mTvName.setText(""+mFood.getName());
-            mTvAddress.setText(mFood.getAddress());
-            mTvPrice.setText("￥:"+mFood.getPrice());
-            UILUtils.displayImageNoAnim(mFood.getImgUrl1(),mImg);
-            if(mFood.getImgUrl2()==null){
+            mgood= (Product) getIntent().getSerializableExtra("date");
+            mTvDetail.setText(mgood.getDetail());
+            mTvName.setText(""+mgood.getName());
+            mTvAddress.setText(mgood.getAddress());
+            mTvPrice.setText("￥:"+mgood.getPrice());
+            UILUtils.displayImageNoAnim(mgood.getImgUrl1(),mImg);
+            if(mgood.getImgUrl2()==null){
                 mImg2.setVisibility(View.GONE);
             }else {
                 mImg2.setVisibility(View.VISIBLE);
-                UILUtils.displayImageNoAnim(mFood.getImgUrl2(),mImg2);
+                UILUtils.displayImageNoAnim(mgood.getImgUrl2(),mImg2);
             }
-            if(mFood.getImgUrl3()==null){
+            if(mgood.getImgUrl3()==null){
                 mImg3.setVisibility(View.GONE);
             }else {
                 mImg3.setVisibility(View.VISIBLE);
-                UILUtils.displayImageNoAnim(mFood.getImgUrl3(),mImg3);
+                UILUtils.displayImageNoAnim(mgood.getImgUrl3(),mImg3);
             }
             if(getIntent().getBooleanExtra("order",false)){
                 mRtlOrder.setVisibility(View.GONE);
@@ -165,27 +165,27 @@ public class GoodDetailActivity extends BaseActivity {
                     if(list.size()==0){
                         stopProgressDialog();
                         Toast("抱歉,您的余额不足");
-                    }else if(list.get(0).getMoney()<Double.parseDouble(mFood.getPrice())){
+                    }else if(list.get(0).getMoney()<Double.parseDouble(mgood.getPrice())){
                         stopProgressDialog();
                         Toast("抱歉,您的余额不足");
                     }else {
                         startProgressDialog("加载中...");
                         order order = new order();
-                        order.setFoodDetail(mFood.getDetail());
-                        order.setFoodName(mFood.getName());
+                        order.setgoodDetail(mgood.getDetail());
+                        order.setgoodName(mgood.getName());
                         order.setAddress(address);
-                        order.setShopId(mFood.getShopId());
-                        order.setImg1(mFood.getImgUrl1());
-                        order.setImg2(mFood.getImgUrl2());
-                        order.setFoodTPrice(mFood.getPrice());
-                        order.setImg3(mFood.getImgUrl3());
+                        order.setShopId(mgood.getShopId());
+                        order.setImg1(mgood.getImgUrl1());
+                        order.setImg2(mgood.getImgUrl2());
+                        order.setgoodTPrice(mgood.getPrice());
+                        order.setImg3(mgood.getImgUrl3());
                         order.setUserId(SetUtils.GetId(getApplicationContext()));
                         order.save(new SaveListener<String>() {
                             @Override
                             public void done(String s, BmobException e) {
                                 if(e==null){
                                     Money money = new Money();
-                                    money.setMoney(list.get(0).getMoney()-Double.parseDouble(mFood.getPrice()));
+                                    money.setMoney(list.get(0).getMoney()-Double.parseDouble(mgood.getPrice()));
                                     money.update(list.get(0).getObjectId(), new UpdateListener() {
                                         @Override
                                         public void done(BmobException e) {
@@ -219,13 +219,13 @@ public class GoodDetailActivity extends BaseActivity {
     private void AddCarr() {
         startProgressDialog("加载中...");
         ShopCar order = new ShopCar();
-        order.setFoodDetail(mFood.getDetail());
-        order.setFoodName(mFood.getName());
-        order.setImg1(mFood.getImgUrl1());
-        order.setImg2(mFood.getImgUrl2());
-        order.setShopId(mFood.getShopId());
-        order.setFoodTPrice(mFood.getPrice());
-        order.setImg3(mFood.getImgUrl3());
+        order.setgoodDetail(mgood.getDetail());
+        order.setgoodName(mgood.getName());
+        order.setImg1(mgood.getImgUrl1());
+        order.setImg2(mgood.getImgUrl2());
+        order.setShopId(mgood.getShopId());
+        order.setgoodTPrice(mgood.getPrice());
+        order.setImg3(mgood.getImgUrl3());
         order.setUserId(SetUtils.GetId(getApplicationContext()));
         order.save(new SaveListener<String>() {
             @Override

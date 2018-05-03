@@ -25,7 +25,7 @@ public class GoodTypeListFragment extends BaseFragment {
         /**
          * 女士鞋服专区
          */
-        layout.findViewById(R.id.rtl_nsxf).setOnClickListener(new View.OnClickListener() {
+        layout.findViewById(R.id.rtl_femalexf).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), GoodTypeActivity.class).putExtra("type","女士鞋服专区"));
@@ -34,7 +34,7 @@ public class GoodTypeListFragment extends BaseFragment {
         /**
          * 男士鞋服
          */
-        layout.findViewById(R.id.rtl_nsxf).setOnClickListener(new View.OnClickListener() {
+        layout.findViewById(R.id.rtl_manxf).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), GoodTypeActivity.class).putExtra("type","男士鞋服专区"));
@@ -59,12 +59,12 @@ public class GoodTypeListFragment extends BaseFragment {
             }
         });
         /**
-         * 其他做专区
+         * 超市专区
          */
         layout.findViewById(R.id.rtl_others).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), GoodTypeActivity.class).putExtra("type","其他专区"));
+                startActivity(new Intent(getActivity(), GoodTypeActivity.class).putExtra("type","超市专区"));
             }
         });
     }

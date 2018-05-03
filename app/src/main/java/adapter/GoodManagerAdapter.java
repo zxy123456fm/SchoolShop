@@ -61,18 +61,18 @@ public class GoodManagerAdapter extends BaseAdapter {
 		   viewHold.TvDel.setOnClickListener(new View.OnClickListener() {
 			   @Override
 			   public void onClick(View v) {
-				   if(onDelFoodLitner!=null){
-						onDelFoodLitner.Del(position);
+				   if(onDelgoodLitner!=null){
+						onDelgoodLitner.Del(position);
 				   }
 			   }
 		   });
 		return convertView;
 	}
-	public onDelFoodLitner onDelFoodLitner;
-	public void setOnDelFoodLitner(onDelFoodLitner on){
-		onDelFoodLitner=on;
+	public onDelgoodLitner onDelgoodLitner;
+	public void setOnDelgoodLitner(onDelgoodLitner on){
+		onDelgoodLitner=on;
 	}
-	public interface onDelFoodLitner{
+	public interface onDelgoodLitner{
 		void Del(int pos);
 	}
 	class ViewHold{

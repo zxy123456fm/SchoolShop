@@ -55,9 +55,9 @@ public class OrderAdapter extends BaseAdapter {
 //		if(mDate.get(position).isShopCar()){
 //
 //		}else {
-			viewHold.TvTitle.setText(""+mDate.get(position).getFoodName());
+			viewHold.TvTitle.setText(""+mDate.get(position).getgoodName());
 			viewHold.TvTIme.setText(""+mDate.get(position).getCreatedAt());
-			viewHold.TvPrice.setText("订单价格:"+"￥"+mDate.get(position).getFoodTPrice());
+			viewHold.TvPrice.setText("订单价格:"+"￥"+mDate.get(position).getgoodTPrice());
 			UILUtils.displayImageNoAnim(mDate.get(position).getImg1(),viewHold.Img);
 //		}
 		if(mDate.get(position).getState()==0){

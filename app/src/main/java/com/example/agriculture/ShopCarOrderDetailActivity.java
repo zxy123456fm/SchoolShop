@@ -29,7 +29,7 @@ public class ShopCarOrderDetailActivity extends BaseActivity {
     private float allPrice;
     private void getAllPrice() {
         for (int i=0;i<mDate.size();i++){
-            allPrice=allPrice+Float.parseFloat(mDate.get(i).getFoodTPrice());
+            allPrice=allPrice+Float.parseFloat(mDate.get(i).getgoodTPrice());
         }
         mTvPrice.setText("总价格:"+getIntent().getStringExtra("price")+"元");
     }

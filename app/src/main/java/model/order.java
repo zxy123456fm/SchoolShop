@@ -7,13 +7,13 @@ import cn.bmob.v3.BmobObject;
 
 public class order extends BmobObject {
     private String UserId;
-    private String FoodName;
+    private String goodName;
     private String praise;
-    private String FoodDetail;
+    private String goodDetail;
     private String Address;
-    private String FoodTPrice;
+    private String goodTPrice;
     private String ShopId;
-    private String FoodTAddress;
+    private String goodTAddress;
     private boolean IsShopCar;
     private int State;
     private String Img1;
@@ -25,35 +25,35 @@ public class order extends BmobObject {
     public void setUserId(String userId) {
         UserId = userId;
     }
-    public String getFoodName() {
-        return FoodName;
+    public String getgoodName() {
+        return goodName;
     }
-    public void setFoodName(String foodName) {
-        FoodName = foodName;
-    }
-
-    public String getFoodDetail() {
-        return FoodDetail;
+    public void setgoodName(String goodName) {
+        goodName = goodName;
     }
 
-    public void setFoodDetail(String foodDetail) {
-        FoodDetail = foodDetail;
+    public String getgoodDetail() {
+        return goodDetail;
     }
 
-    public String getFoodTPrice() {
-        return FoodTPrice;
+    public void setgoodDetail(String goodDetail) {
+        goodDetail = goodDetail;
     }
 
-    public void setFoodTPrice(String foodTPrice) {
-        FoodTPrice = foodTPrice;
+    public String getgoodTPrice() {
+        return goodTPrice;
     }
 
-    public String getFoodTAddress() {
-        return FoodTAddress;
+    public void setgoodTPrice(String goodTPrice) {
+        goodTPrice = goodTPrice;
     }
 
-    public void setFoodTAddress(String foodTAddress) {
-        FoodTAddress = foodTAddress;
+    public String getgoodTAddress() {
+        return goodTAddress;
+    }
+
+    public void setgoodTAddress(String goodTAddress) {
+        goodTAddress = goodTAddress;
     }
 
     public String getImg1() {

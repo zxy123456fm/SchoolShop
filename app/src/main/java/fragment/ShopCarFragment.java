@@ -31,7 +31,8 @@ import utils.SetUtils;
 
 import static cn.bmob.v3.Bmob.getApplicationContext;
 
-/**
+/**Fragment其实可以理解为一个具有自己生命周期的控件，只不过这个控件又有点特殊，
+ * 它有自己的处理输入事件的能力，有自己的生命周期，又必须依赖于Activity，能互相通信和托管。
  */
 public class ShopCarFragment extends BaseFragment {
     private ShopCarAdapter adapter;
@@ -67,13 +68,13 @@ public class ShopCarFragment extends BaseFragment {
                 adapter.UpdateNums(mList, pos, true);
 //                Toast(""+adapter.getGoodNums().get(pos));
                 ArrayList<Integer> goodNums = adapter.getGoodNums();
-                Price = Price + Float.parseFloat(mDate.get(pos).getFoodTPrice());
+                Price = Price + Float.parseFloat(mDate.get(pos).getgoodTPrice());
                 Float allPrice = getAllPrice();
                 mTvAllPrice.setText("总价:" + allPrice + "元");
                 ShopCar shopCar = new ShopCar();
                 shopCar.setImg1(mDate.get(pos).getImg1());
-                shopCar.setFoodName(mDate.get(pos).getFoodName());
-                shopCar.setFoodTPrice("" + Float.parseFloat(mDate.get(pos).getFoodTPrice()));
+                shopCar.setgoodName(mDate.get(pos).getgoodName());
+                shopCar.setgoodTPrice("" + Float.parseFloat(mDate.get(pos).getgoodTPrice()));
                 shopCar.setBuyNum(goodNums.get(pos));
                 if (mGoodCheckState.get(pos).isSelect()) {
                     shopCar.setSelect(true);
@@ -93,14 +94,14 @@ public class ShopCarFragment extends BaseFragment {
                 adapter.UpdateNums(mList, pos, false);
                 ArrayList<Integer> goodNums = adapter.getGoodNums();
                 if (adapter.getGoodNums().get(pos) >= 0) {
-                    Price = Price - Float.parseFloat(mDate.get(pos).getFoodTPrice());
+                    Price = Price - Float.parseFloat(mDate.get(pos).getgoodTPrice());
                 }
                 Float allPrice = getAllPrice();
                 mTvAllPrice.setText("总价:" + allPrice + "元");
                 ShopCar shopCar = new ShopCar();
                 shopCar.setImg1(mDate.get(pos).getImg1());
-                shopCar.setFoodName(mDate.get(pos).getFoodName());
-                shopCar.setFoodTPrice("" + Float.parseFloat(mDate.get(pos).getFoodTPrice()));
+                shopCar.setgoodName(mDate.get(pos).getgoodName());
+                shopCar.setgoodTPrice("" + Float.parseFloat(mDate.get(pos).getgoodTPrice()));
                 shopCar.setBuyNum(goodNums.get(pos));
                 if (mGoodCheckState.get(pos).isSelect()) {
                     shopCar.setSelect(true);
@@ -125,8 +126,8 @@ public class ShopCarFragment extends BaseFragment {
                     mTvAllPrice.setText("总价:" + allPrice + "元");
                     ShopCar shopCar = new ShopCar();
                     shopCar.setImg1(mDate.get(pos).getImg1());
-                    shopCar.setFoodName(mDate.get(pos).getFoodName());
-                    shopCar.setFoodTPrice("" + Float.parseFloat(mDate.get(pos).getFoodTPrice()));
+                    shopCar.setgoodName(mDate.get(pos).getgoodName());
+                    shopCar.setgoodTPrice("" + Float.parseFloat(mDate.get(pos).getgoodTPrice()));
                     shopCar.setBuyNum(goodNums.get(pos));
                     shopCar.setSelect(true);
                     mShopOrder.set(pos, shopCar);
@@ -137,10 +138,10 @@ public class ShopCarFragment extends BaseFragment {
 //                                ShopCar car = new ShopCar();
 //                                car.setUserId(mDate.get(pos).getUserId());
 //                                car.setBuyNum(goodNums.get(pos));
-//                                car.setFoodDetail(mDate.get(pos).getFoodDetail());
-//                                car.setFoodName(mDate.get(pos).getFoodName());
-//                                car.setFoodTAddress(mDate.get(pos).getFoodTAddress());
-//                                car.setFoodTPrice(mDate.get(pos).getFoodTPrice());
+//                                car.setgoodDetail(mDate.get(pos).getgoodDetail());
+//                                car.setgoodName(mDate.get(pos).getgoodName());
+//                                car.setgoodTAddress(mDate.get(pos).getgoodTAddress());
+//                                car.setgoodTPrice(mDate.get(pos).getgoodTPrice());
 //                                car.setImg1(mDate.get(pos).getImg1());
 //                                car.setImg2(mDate.get(pos).getImg2());
 //                                car.setImg3(mDate.get(pos).getImg3());
@@ -154,13 +155,13 @@ public class ShopCarFragment extends BaseFragment {
                 } else {
                     mGoodCheckState.set(pos, new GoodState(false, pos));
                     Float allPrice = getAllPrice();
-//                   Price=Price-(Float.parseFloat(mDate.get(pos).getFoodTPrice())*num);
+//                   Price=Price-(Float.parseFloat(mDate.get(pos).getgoodTPrice())*num);
                     mTvAllPrice.setText("总价:" + (allPrice) + "元");
                     ShopCar car = new ShopCar();
                     ShopCar shopCar = new ShopCar();
                     shopCar.setImg1(mDate.get(pos).getImg1());
-                    shopCar.setFoodName(mDate.get(pos).getFoodName());
-                    shopCar.setFoodTPrice("" + Float.parseFloat(mDate.get(pos).getFoodTPrice()));
+                    shopCar.setgoodName(mDate.get(pos).getgoodName());
+                    shopCar.setgoodTPrice("" + Float.parseFloat(mDate.get(pos).getgoodTPrice()));
                     shopCar.setBuyNum(goodNums.get(pos));
                     shopCar.setSelect(false);
                     mShopOrder.set(pos, shopCar);
@@ -291,8 +292,8 @@ public class ShopCarFragment extends BaseFragment {
         order.setUserId(SetUtils.GetId(getApplicationContext()));
         order.setAddress(address);
         order.setShopCar(true);
-        order.setFoodTPrice(getAllPrice() + "");
-        order.setFoodName(mShopOrderss.get(0).getFoodName() + "..." + "等" + mShopOrderss.size() + "个商品");
+        order.setgoodTPrice(getAllPrice() + "");
+        order.setgoodName(mShopOrderss.get(0).getgoodName() + "..." + "等" + mShopOrderss.size() + "个商品");
         order.setImg1(mShopOrderss.get(0).getImg1());
         order.save(new SaveListener<String>() {
             @Override
@@ -302,9 +303,9 @@ public class ShopCarFragment extends BaseFragment {
                     AddShopCarOrder(order, mShopOrderss.get(i), i, false);
                 }
 //                BmobQuery<model.order> query = new BmobQuery<>();
-//                query.addWhereEqualTo("FoodName",mShopOrderss.get(0).getFoodName()+"..."+"等"+mShopOrderss.size()+"个商品");
+//                query.addWhereEqualTo("goodName",mShopOrderss.get(0).getgoodName()+"..."+"等"+mShopOrderss.size()+"个商品");
 //                query.addWhereEqualTo("UserId", SetUtils.GetId(getApplicationContext()));
-//                query.addWhereEqualTo("FoodTPrice",""+getAllPrice());
+//                query.addWhereEqualTo("goodTPrice",""+getAllPrice());
 //                query.addWhereEqualTo("IsShopCar",true);
 //                query.addWhereEqualTo("Img1",mShopOrderss.get(0).getImg1());
 //                query.findObjects(new FindListener<model.order>() {
@@ -369,8 +370,8 @@ public class ShopCarFragment extends BaseFragment {
                         for (int i = 0; i < mDate.size(); i++) {
                             ShopCar shopCar = new ShopCar();
                             shopCar.setImg1(mDate.get(i).getImg1());
-                            shopCar.setFoodName(mDate.get(i).getFoodName());
-                            shopCar.setFoodTPrice(mDate.get(i).getFoodTPrice());
+                            shopCar.setgoodName(mDate.get(i).getgoodName());
+                            shopCar.setgoodTPrice(mDate.get(i).getgoodTPrice());
                             shopCar.setSelect(false);
                             shopCar.setBuyNum(0);
                             mShopOrder.add(shopCar);
@@ -400,9 +401,9 @@ public class ShopCarFragment extends BaseFragment {
     public void AddShopCarOrder(String orderId, final ShopCar mShopCar, final int pos, final boolean IsLast) {
         ShopCarOrder order = new ShopCarOrder();
         order.setImg1(mShopCar.getImg1());
-//        order.setFoodDetail(mShopCar.getFoodDetail());
-        order.setFoodName(mShopCar.getFoodName());
-        order.setFoodTPrice("" + Float.parseFloat(mShopCar.getFoodTPrice()));
+//        order.setgoodDetail(mShopCar.getgoodDetail());
+        order.setgoodName(mShopCar.getgoodName());
+        order.setgoodTPrice("" + Float.parseFloat(mShopCar.getgoodTPrice()));
         order.setGoodNum(mShopCar.getBuyNum());
         order.setOrderId(orderId);
         order.save(new SaveListener<String>() {
@@ -448,7 +449,7 @@ public class ShopCarFragment extends BaseFragment {
         ArrayList<Integer> goodNums = adapter.getGoodNums();
         for (int i = 0; i < mDate.size(); i++) {
             if (mGoodCheckState.get(i).isSelect()) {//选择了
-                allPrice = allPrice + Float.parseFloat(mDate.get(i).getFoodTPrice()) * (goodNums.get(i));
+                allPrice = allPrice + Float.parseFloat(mDate.get(i).getgoodTPrice()) * (goodNums.get(i));
             } else {
 
             }

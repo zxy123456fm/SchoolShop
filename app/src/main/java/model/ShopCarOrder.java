@@ -5,32 +5,32 @@ import cn.bmob.v3.BmobObject;
 public class ShopCarOrder extends BmobObject {
     private int GoodNum;
     private String OrderId;
-    private String FoodName;
-    private String FoodDetail;
-    private String FoodTPrice;
+    private String goodName;
+    private String goodDetail;
+    private String goodTPrice;
     private String Img1;
-    public String getFoodName() {
-        return FoodName;
+    public String getgoodName() {
+        return goodName;
     }
 
-    public void setFoodName(String foodName) {
-        FoodName = foodName;
+    public void setgoodName(String goodName) {
+        goodName = goodName;
     }
 
-    public String getFoodDetail() {
-        return FoodDetail;
+    public String getgoodDetail() {
+        return goodDetail;
     }
 
-    public void setFoodDetail(String foodDetail) {
-        FoodDetail = foodDetail;
+    public void setgoodDetail(String goodDetail) {
+        goodDetail = goodDetail;
     }
 
-    public String getFoodTPrice() {
-        return FoodTPrice;
+    public String getgoodTPrice() {
+        return goodTPrice;
     }
 
-    public void setFoodTPrice(String foodTPrice) {
-        FoodTPrice = foodTPrice;
+    public void setgoodTPrice(String goodTPrice) {
+        goodTPrice = goodTPrice;
     }
 
 

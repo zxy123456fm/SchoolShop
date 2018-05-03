@@ -23,7 +23,7 @@
             android:layout_margin="10dp"
             android:layout_height="match_parent">
             <RelativeLayout
-                android:id="@+id/rtl_nsxf"
+                android:id="@+id/rtl_femalexf"
                 android:layout_width="match_parent"
                 android:layout_margin="5dp"
                 android:background="@drawable/litter_round_white_stro_bg"
@@ -36,7 +36,7 @@
                     android:layout_height="wrap_content" />
             </RelativeLayout>
             <RelativeLayout
-                android:id="@+id/rtl_nsxf"
+                android:id="@+id/rtl_manxf"
                 android:layout_width="match_parent"
                 android:layout_margin="5dp"
                 android:background="@drawable/litter_round_white_stro_bg"
@@ -82,7 +82,7 @@
                 android:layout_height="70dp">
                 <TextView
                     android:layout_width="wrap_content"
-                    android:text="超市"
+                    android:text="超市专区"
                     android:layout_centerInParent="true"
                     android:textColor="@color/lights_black"
                     android:layout_height="wrap_content" />

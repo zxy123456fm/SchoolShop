@@ -125,9 +125,9 @@ public class ShopCarAdapter extends BaseAdapter {
 	 * @param position
      */
 	private void setDate(ViewHold viewHold,int position) {
-		viewHold.TvTitle.setText(""+mDate.get(position).getFoodName());
+		viewHold.TvTitle.setText(""+mDate.get(position).getgoodName());
 		viewHold.TvTIme.setText(""+mDate.get(position).getCreatedAt());
-		viewHold.TvPrice.setText("订单价格:"+"￥"+mDate.get(position).getFoodTPrice());
+		viewHold.TvPrice.setText("订单价格:"+"￥"+mDate.get(position).getgoodTPrice());
 		viewHold.EtNum.setEnabled(false);
 //		viewHold.EtNum.setText("1");
 		UILUtils.displayImageNoAnim(mDate.get(position).getImg1(),viewHold.Img);

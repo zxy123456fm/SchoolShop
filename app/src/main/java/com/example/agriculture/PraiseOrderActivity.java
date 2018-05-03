@@ -49,10 +49,10 @@ public class PraiseOrderActivity extends BaseActivity {
                     order.setState(3);
                     order.setShopId(mDate.getShopId());
                     order.setAddress(mDate.getAddress());
-                    order.setFoodDetail(mDate.getFoodDetail());
-                    order.setFoodName(mDate.getFoodName());
+                    order.setgoodDetail(mDate.getgoodDetail());
+                    order.setgoodName(mDate.getgoodName());
                     order.setPraise(mEtText.getText().toString().trim());
-                    order.setFoodTPrice(mDate.getFoodTPrice());
+                    order.setgoodTPrice(mDate.getgoodTPrice());
                     order.setImg1(mDate.getImg1());
                     order.setImg2(mDate.getImg2());
                     order.setImg3(mDate.getImg3());

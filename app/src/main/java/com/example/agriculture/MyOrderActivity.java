@@ -80,17 +80,17 @@ public class MyOrderActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(mDate.get(position).isShopCar()){
-                    startActivity(new Intent(getApplicationContext(),ShopCarOrderDetailActivity.class).putExtra("Id",""+mDate.get(position).getObjectId()).putExtra("price",mDate.get(position).getFoodTPrice()));
+                    startActivity(new Intent(getApplicationContext(),ShopCarOrderDetailActivity.class).putExtra("Id",""+mDate.get(position).getObjectId()).putExtra("price",mDate.get(position).getgoodTPrice()));
                 }else {
-                    Product food = new Product();
-                    food.setName(mDate.get(position).getFoodName());
-                    food.setDetail(mDate.get(position).getFoodDetail());
-                    food.setAddress(mDate.get(position).getFoodTAddress());
-                    food.setPrice(mDate.get(position).getFoodTPrice());
-                    food.setImgUrl1(mDate.get(position).getImg1());
-                    food.setImgUrl2(mDate.get(position).getImg2());
-                    food.setImgUrl3(mDate.get(position).getImg3());
-                    startActivity(new Intent(getApplicationContext(),GoodDetailActivity.class).putExtra("order",true).putExtra("date",food));
+                    Product good = new Product();
+                    good.setName(mDate.get(position).getgoodName());
+                    good.setDetail(mDate.get(position).getgoodDetail());
+                    good.setAddress(mDate.get(position).getgoodTAddress());
+                    good.setPrice(mDate.get(position).getgoodTPrice());
+                    good.setImgUrl1(mDate.get(position).getImg1());
+                    good.setImgUrl2(mDate.get(position).getImg2());
+                    good.setImgUrl3(mDate.get(position).getImg3());
+                    startActivity(new Intent(getApplicationContext(),GoodDetailActivity.class).putExtra("order",true).putExtra("date",good));
                 }
             }
         });

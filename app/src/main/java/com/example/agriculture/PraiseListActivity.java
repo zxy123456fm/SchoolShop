@@ -48,7 +48,7 @@ public class PraiseListActivity extends BaseActivity {
                     if(e==null){
                         mDate.clear();
                         for(order date:list){
-                            if(date.getFoodName().equals(getIntent().getStringExtra("name"))){
+                            if(date.getgoodName().equals(getIntent().getStringExtra("name"))){
                                 mDate.add(date);
                             }
                         }

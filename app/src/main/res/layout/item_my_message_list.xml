@@ -23,7 +23,7 @@
                 android:layout_centerVertical="true"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="你好松哥"
+                android:text="nice to meet you!"
                 android:textColor="@color/blue"
                 android:textSize="12sp" />
         </RelativeLayout>
@@ -38,7 +38,7 @@
             <TextView
                 android:id="@+id/tv_content"
                 android:layout_width="wrap_content"
-                android:text="大撒的发生的发生大发的发地方撒地方撒地方撒地方撒地方撒地方速度"
+                android:text="=="
                 android:layout_height="wrap_content"
                 android:textColor="@color/light_black"
                 android:textSize="15sp" />
